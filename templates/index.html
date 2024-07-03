@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Payment <span>Gateway</span></h1>
+        <h2>Secure Payment</h2>
+        <div class="payment-options">
+            <button id="card-payment" class="payment-button">Debit/Credit Card</button>
+            <button id="netbanking-payment" class="payment-button">Online Banking</button>
+            <button id="upi-payment" class="payment-button">UPI Payment</button>
+            <button id="wallet-payment" class="payment-button">Wallet</button>
+            <div class="wallet-options">
+                <button id="paytm-payment" class="sub-option">Paytm</button>
+                <button id="phonepe-payment" class="sub-option">PhonePe</button>
+            </div>
+        </div>
+        <div id="payment-status" role="alert"></div>
+    </div>
+
+    <!-- Modal for Card Payment -->
+    <div id="card-modal" class="card-modal">
+        <div class="card-modal-content">
+            <span id="card-modal-close" class="card-modal-close">&times;</span>
+            <h2>Enter Card Details</h2>
+            <form id="card-form" class="card-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <button type="submit" id="submit-card-details" class="card-submit-button">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Online Banking Options -->
+    <div id="netbanking-modal" class="modal">
+        <div class="modal-content">
+            <span id="netbanking-modal-close" class="close">&times;</span>
+            <h2>Select Your Bank</h2>
+            <div id="bank-list">
+                <button class="bank-option">Bank A</button>
+                <button class="bank-option">Bank B</button>
+                <button class="bank-option">Bank C</button>
+                <!-- Add more banks as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for UPI Payment -->
+    <div id="upi-modal" class="modal">
+        <div class="modal-content">
+            <span id="upi-modal-close" class="close">&times;</span>
+            <h2>Enter UPI ID</h2>
+            <form id="upi-form" class="upi-form">
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" name="upi-id" required>
+                <button type="submit" id="verify-and-pay" class="upi-submit-button">Verify and Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
